@@ -104,7 +104,7 @@
         @if($index < 15)
         <div class="col-6 col-sm-4 col-md-3 col-lg-2">
           <div class="card h-100 text-center">
-            <img src="{{ asset('storage/' . $tool->image) }}" class="card-img-top" alt="{{ $tool->name }}" style="height: 120px; object-fit: cover;">
+            <img src="{{ asset('storage/items/' . $tool->image) }}" class="card-img-top" alt="{{ $tool->name }}" style="height: 120px; object-fit: cover;">
             <div class="card-body p-2">
               <h6 class="card-title mb-1" style="font-size: 14px;">{{ $tool->name }}</h6>
               <p class="card-text mb-1" style="font-size: 12px;">{{ Str::limit($tool->description, 50) }}</p>

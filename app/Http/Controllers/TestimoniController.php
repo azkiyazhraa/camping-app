@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testimoni;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class TestimoniController extends Controller
 {
     public function index()
-    {
-        $testimonis = Testimoni::latest()->take(3)->get();
-        return view('index', compact('testimonis'));
-    }
+{
+    $tools = Item::all(); 
+    $testimonis = \App\Models\Testimoni::latest()->take(3)->get();
+
+    return view('index', compact('tools', 'testimonis'));
+}
 
     public function create()
     {

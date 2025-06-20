@@ -35,6 +35,9 @@ Route::prefix('testimoni')->controller(TestimoniController::class)->group(functi
 
 Route::post('/kontak', [KontakController::class, 'kirim'])->name('kontak.kirim');
 
-Route::get('/items', [ItemController::class, 'index'])->name('items.index');
-Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
-Route::post('/items', [ItemController::class, 'store'])->name('items.store');
+Route::controller(ItemController::class)->group(function () {
+    Route::get('/', 'index'); // Untuk halaman utama
+    Route::get('/items', 'index')->name('items.index');
+    Route::get('/items/create', 'create')->name('items.create');
+    Route::post('/items', 'store')->name('items.store');
+});
